@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,14 +11,17 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <ul class="">
-              <img src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-                <h4>De-Fiance Blog</h4>
+          <a class="navbar-brand" href="#">De-Fianse Blog</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">Inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Noticias</a>
+                <a class="nav-link" href="#">Noticias</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Publicaciones</a>
@@ -33,15 +37,12 @@
                   Usuarios
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Iniciar Sesion</a></li>
-                  <li><a class="dropdown-item" href="#">Registrar</a></li>
-                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="{% url 'usuarios:login' %}">Inicia Sesion Aqui</a></li>
+                  <li><a class="dropdown-item" href="{% url 'usuarios:registrarse' %}">Registrate</a></li>
                   <li><a class="dropdown-item" href="#">Cerrar Sesion</a></li>
+                </ul>
+              </li>
             </ul>
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
           </div>
         </div>
       </nav>
