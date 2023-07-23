@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Noticias
-from django.views.generic import ListView, CreateView, UpdateView
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView
 from .forms import CrearNoticiasForm
 from django.urls import reverse
 
@@ -43,3 +43,19 @@ class EditarNoticia(UpdateView):
     def get_success_url(self):
         return reverse('noticias:noticias')
 
+# Vista que elimina una noticia:
+
+class EliminarNoticia(DeleteView):
+    model = Noticias
+    template_name = 'noticias/eliminar-noticias.html'
+    
+    def get_success_url(self):
+        return reverse('noticias:noticias')
+    
+
+#Vista que crea un noticia en detalle:
+
+class NoticiaDetalle(DetailView):
+    model = Noticias
+    template_name = 'noticias/noticia-detalle.html'
+    context_object_name = 'detalle'

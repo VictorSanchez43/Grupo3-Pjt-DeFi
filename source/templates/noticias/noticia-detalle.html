@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+<div class="card m-4">
+  <div class="card">
+    <div class="card-header">
+      {{ detalle.fecha }}
+    </div>
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+      <h6 class="card-title">Autor: {{ detalle.autor.first_name}} {{detalle.autor.last_name}}</h6>
+      <h5 class="card-title">{{ detalle.titulo }}</h5>
+      <p class="card-text">{{ detalle.texto }}</p>
+      <p class="card-text">Actualizado a la fecha<small class="text-body-secondary">{{detalle.update}}</small></p>
+    </div>
+  </div>
+</div>
+<a href="{% url 'noticias:noticias' %}" class="btn btn-primary">Volver</a>
+    
+{% endblock contenido %}

@@ -8,19 +8,27 @@
         <div class="card" style="width: 18rem;">
             <img src="..." class="card-img-top" alt="...">
             <div class="card-head">
-                <h5 class="card-title">{{ noticia.fecha }}</h5>
-                <h5 class="card-title">{{ noticia.titulo }} <h5>Autor: {{ noticia.autor.first_name }} {{ noticia.autor.last_name }} </h5></h5>
+                <h6 class="card-title">{{ noticia.fecha }}</h6>
+                <h5 class="card-title"><h5>Autor: {{ noticia.autor.first_name }} {{ noticia.autor.last_name }} </h5></h5>
+                <h3>{{ noticia.titulo }} </h3>
             </div>
             <div class="card-body">
                 <p class="card-text">{{ noticia.texto }}</p>
             </div>
-            <a href="{% url 'noticias:editar-noticia' noticia.id %}" class="btn btn-primary">Editar</a>
+
+                <a href="{% url 'noticias:editar-noticia' noticia.id %}" class="btn btn-primary">Editar</a>
+                <a href="{% url 'noticias:eliminar-noticia' noticia.id %}" class="btn btn-danger">Eliminar</a>
+                <a href="{% url 'noticias:noticia-detalle' noticia.id %}" class="btn btn-primary">Ver mas</a>
+                
         </div>
     {% endfor %}
-
+    
     {% if user.is_authenticated %}
         <a href="{% url 'noticias:publicar-noticias' %}" class="btn btn-primary">Publica tu Noticia</a>
     {% else %}
-        <a href="#" class="btn btn-primary">Indagar mas</a>
+        <a href="{% url 'usuarios:login' %}" class="btn btn-primary">Inicia Sesion Para Publicar</a>
+        <a href="#" class="btn btn-primary">Indagar mas</a>  
+        
     {% endif %}
+
 {% endblock contenido %}
