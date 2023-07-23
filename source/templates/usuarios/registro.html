@@ -1,15 +1,21 @@
 {% extends 'base.html' %}
 
 {% block contenido %}
-    <h2>Crear un Usuario</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
 
-        <button type="submit" class="btn btn-success">
-            <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
-             Crear Usuario
-            </span>
-        </button>
-    </form>
+
+    <h1>Registrar Usuario</h1>
+    <section class="vh-100">
+        <div class="container py-5 h-100">
+            <form method="post">{% csrf_token %}
+                {{ form.as_table}}
+                <!-- Submit button -->
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Crear Usuario</button>
+
+   
+      
+            
+            </form> 
+        </div>
+    </section>
+    
 {% endblock contenido %}
