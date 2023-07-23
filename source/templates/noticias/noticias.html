@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+    <h1>NOTICIAS</h1>
+    
+    {% for noticia in noticias %}
+        <h4>Noticias</h4>
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+            <h5 class="card-title">{{ noticia.fecha}}</h5>
+            <h5 class="card-title">{{ noticia.titulo}}</h5>
+            <p class="card-text">{{ noticia.texto }}</p>
+            <a href="#" class="btn btn-primary">Indagar mas</a>
+            </div>
+        </div>
+    {% endfor %}
+        
+{% endblock contenido %}
