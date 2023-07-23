@@ -6,6 +6,10 @@
         {% csrf_token %}
         {{ form.as_p }}
 
-        <button type="submit" class="btn btn-success"> Crear Usuario</button>
+        <button type="submit" class="btn btn-success">
+            <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+             Crear Usuario
+            </span>
+        </button>
     </form>
 {% endblock contenido %}
