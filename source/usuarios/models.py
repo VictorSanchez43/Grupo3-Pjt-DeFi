@@ -10,8 +10,7 @@ class Usuario(AbstractUser):
     es_admin = models.BooleanField(default=False)
     es_colab = models.BooleanField(default=False)
     
-    def __str__(self):
-        return self.first_name + '-' + self.last_name
+    
     
 
 

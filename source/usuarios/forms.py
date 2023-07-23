@@ -8,7 +8,7 @@ class DateInput(forms.DateInput):
 class RegistrarUsuarioForm(UserCreationForm):
     class Meta:
         model = Usuario
-        fields = fields = ['first_name', 'last_name','fecha_nacimiento', 'username', 'password1', 'password2', 'email', 'telefono',  'domicilio'] 
+        fields = fields = ['first_name', 'last_name','fecha_nacimiento', 'username', 'password1', 'password2', 'email', 'telefono', 'domicilio'] 
         
         widgets = {
             
