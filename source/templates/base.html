@@ -40,7 +40,7 @@
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="{% url 'usuarios:login' %}">Inicia Sesion Aqui</a></li>
                   <li><a class="dropdown-item" href="{% url 'usuarios:registrarse' %}">Registrate</a></li>
-                  <li><a class="dropdown-item" href="#">Cerrar Sesion</a></li>
+                  <li><a class="dropdown-item" href="{% url 'usuarios:logout' %}">Cerrar Sesion</a></li>
                 </ul>
               </li>
             </ul>
@@ -48,11 +48,19 @@
         </div>
       </nav>
 
+<<<<<<< HEAD
       
       {% block contenido %}
       
       {% endblock contenido %}
         
+=======
+    
+    {% block contenido %}
+      
+    {% endblock contenido %}
+      
+>>>>>>> Rama_BC
 
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
