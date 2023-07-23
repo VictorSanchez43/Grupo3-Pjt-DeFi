@@ -6,12 +6,8 @@ class DateInput(forms.DateInput):
     input_type = 'date'
 
 class RegistrarUsuarioForm(UserCreationForm):
+    fecha_nacimiento = forms.DateField(widget=DateInput(attrs={'class': 'form-control'}))
+
     class Meta:
         model = Usuario
-        fields = fields = ['first_name', 'last_name','fecha_nacimiento', 'username', 'password1', 'password2', 'email', 'telefono', 'domicilio'] 
-        
-        widgets = {
-            
-            'fecha_nacimiento': DateInput(attrs={'class': 'form-control'}),
-        
-        }
+        fields = ['first_name', 'last_name', 'fecha_nacimiento', 'username', 'password1', 'password2', 'email', 'telefono', 'domicilio']
