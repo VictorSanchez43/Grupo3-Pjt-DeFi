@@ -12,9 +12,24 @@
         <div class="card-body">
             <p class="card-text">{{ post.texto }}</p>
             <h6>Fecha: {{ post.fecha }}</h6>
-            <a href="#" class="btn btn-primary">Me Gusta</a>
         </div>
     </div>
+    
+    {% if user.is_authenticated %}
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                Edita/Elimina tu Noticia
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{% url 'noticias:editar-noticia' post.id %}">Editar</a></li>
+                <li><a class="dropdown-item" href="{% url 'noticias:eliminar-noticia' post.id %}">Eliminar</a></li>
+            </ul>
+        </div>
+    {% else %}
+        <a href="{% url 'noticias:noticia-detalle' post.id %}" class="btn btn-primary">Ver Más</a>
+        
+    {% endif %}
+
  
     
 {% endfor %}
