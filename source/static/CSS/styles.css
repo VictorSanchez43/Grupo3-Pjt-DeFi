@@ -1,29 +1,13 @@
-h1 {
-    color: rgb(148, 40, 248);
+.btn-publicar {
+    font-size: 1rem; 
+    padding: 10px 20px; 
+    background-color: #3a3b99;
+    color: white; 
+    border: none;
+    cursor: pointer;
 }
 
-body {
-    margin: 0; /* Para quitar los márgenes predeterminados del body */
-    padding: 0; /* Para quitar el relleno predeterminado del body */
-  }
-  
-nav {
-    background-image: url('https://blogthinkbig.com/wp-content/uploads/sites/4/2014/12/diferencia-entre-gif-png-y-jpg.jpg?resize=1040%2C400');
-    background-size: cover; /* Para que la imagen se ajuste al tamaño de la barra de navegación */
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    height: 100px; /* Ajusta la altura según tus necesidades */
-    
-  }
 
-  div {
-    
-    background-image: url('https://blogthinkbig.com/wp-content/uploads/sites/4/2014/12/diferencia-entre-gif-png-y-jpg.jpg?resize=1040%2C400');
-    /* Para que la imagen se ajuste al tamaño de la barra de navegación */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    height: 100px; /* Ajusta la altura según tus necesidades */
-        
-
+.btn-publicar:hover {
+    background-color: #5fb7ff; 
 }

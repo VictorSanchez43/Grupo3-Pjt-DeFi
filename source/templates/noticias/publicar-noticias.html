@@ -1,14 +1,21 @@
 {% extends 'base.html' %}
 
 {% block contenido %}
-<h2>Noticia</h2>
-<form method="post">
-    {% csrf_token %}
+    <h2>Publicar Noticia</h2>
 
-    {{ form.as_p }}
-    <div class="d-grid gap-2 col-6 mx-auto">
-        <button type="submit" class="btn btn-success">Publicar</button>
-    </div>
-</form>
-    
+    <div class="mb-3">
+        <form method="post">
+            {% csrf_token %}
+            <label for="id_titulo" class="form-label">Título</label>
+            {{ form.titulo }}
+        </div>
+        <div class="mb-3">
+            <label for="id_texto" class="form-label">Texto</label>
+            <textarea class="form-control form-control-lg" id="id_texto" name="texto" rows="6"></textarea>
+        </div>
+        <div class="d-grid gap-2 col-6 mx-auto">
+            <button class="btn btn-publicar" type="submit"><i class="fa-solid fa-file-lines"></i> Nueva Noticia</button>
+        </div>
+        
+    </form>
 {% endblock contenido %}

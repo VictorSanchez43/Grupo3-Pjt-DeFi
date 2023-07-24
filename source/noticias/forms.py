@@ -7,3 +7,5 @@ class CrearNoticiasForm(forms.ModelForm):
     class Meta:
         model = Noticias
         fields = ['titulo', 'texto']
+        
+
