@@ -11,5 +11,4 @@ class Noticias(models.Model):
     uptdate = models.DateField(auto_now=True)
     autor = models.ForeignKey(Usuario, on_delete=models.CASCADE, related_name='autor_noticias')
     
-    def __str__(self):
-        return self.titulo
+
