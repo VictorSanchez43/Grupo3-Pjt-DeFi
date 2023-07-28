@@ -11,3 +11,15 @@ class RegistrarUsuarioForm(UserCreationForm):
     class Meta:
         model = Usuario
         fields = ['first_name', 'last_name', 'fecha_nacimiento', 'username', 'password1', 'password2', 'email', 'telefono', 'domicilio']
+        
+    
+        labels = {
+            'first_name': 'Ingresa tu nombre',
+            'last_name': 'Ingresa tu Apellido',
+            'fecha_nacimiento': 'Selecciona tu fecha de nacimiento',
+            'username': 'Ingresa un Nombre de Usuario',
+            'emai': 'correo electronico',
+            'telefono': 'telefono',
+            'domicilio':'domicilio'
+            }
+        

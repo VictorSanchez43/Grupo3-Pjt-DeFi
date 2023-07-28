@@ -78,3 +78,24 @@
 #fondo {
   background-image: url("./imagenes/defiance.jpg");
 }
+
+
+#fondo-navegador {
+  background-color: rgb(37, 35, 188);
+}
+
+.nav-link {
+  color: white;
+}
+
+.navbar-brand {
+  color: white;
+}
+
+#menu {
+  color: white;
+}
+
+.formulario {
+  color: white;
+}
