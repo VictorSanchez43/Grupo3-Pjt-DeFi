@@ -5,7 +5,7 @@
     <form method="post">{% csrf_token %}
 
         {{ form.as_p }}
-        <button type="submit" class="btn btn-info">Guardar Cambios</button>
+        <button type="submit" class="btn btn-info">Guardar Cambios  <i class="fa-solid fa-circle-check"></i></button>
         <a href="{% url 'noticias:noticias' %}" class="btn btn-primary">Volver</a>
 
     </form>

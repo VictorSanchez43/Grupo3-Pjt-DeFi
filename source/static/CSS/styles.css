@@ -1,13 +1,18 @@
-.btn-publicar {
-    font-size: 1rem; 
-    padding: 10px 20px; 
-    background-color: #3a3b99;
-    color: white; 
-    border: none;
-    cursor: pointer;
+body {
+    margin: 0;
+    padding: 0;
 }
 
-
-.btn-publicar:hover {
-    background-color: #5fb7ff; 
+.navbar {
+    height: 60px; /* Ajusta esta altura según tus necesidades */
+    background-image: url('../img/background.jpg'); /* Ruta relativa a la imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    color: #fff; /* Color del texto en la barra de navegación */
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+  
