@@ -1,63 +1,22 @@
 {% extends 'base.html' %}
 
-{% load static %}
-
 
 {% block contenido %}
 
-    <h1>Registrar Usuario</h1>
-    <section class="vh-100">
-        <div class="container py-5 h-100">
-            <div class="row justify-content-center">
-                <div class="col-md-5">
-                    <form method="post">
-                        {% csrf_token %}
-                        <div class="form-group">
-                            <label for="{{ form.first_name.id_for_label }}">Nombre:</label>
-                            {{ form.first_name }}
-                        </div>
-                        <div class="form-group">
-                            <label for="{{ form.last_name.id_for_label }}">Apellido:</label>
-                            {{ form.last_name }}
-                        </div>
-                        <div class="form-group">
-                            <label for="{{ form.fecha_nacimiento.id_for_label }}">Fecha de Nacimiento:</label>
-                            {{ form.fecha_nacimiento }}
-                        </div>
-                        <div class="form-group">
-                            <label for="{{ form.username.id_for_label }}">Nombre de Usuario:</label>
-                            {{ form.username }}
-                        </div>
-                        <div class="form-group">
-                            <h5>Contraseña</h5>
-                            <label for="{{ form.email.id_for_label }}">Ingresa tu contraseña: </label>
-                            {{ form.password1 }}
-                            <h6>Únicamente letras, dígitos y @/./+/-/_</h6>
-                        </div>
-                        <div class="form-group">
-                            <label for="{{ form.email.id_for_label }}">Confirma tu contraseña:</label>
-                            {{ form.password2}}
-                            <h6>Para verificar, introduzca la misma contraseña anterior.</h6>
-                        </div>
-                        <div class="form-group">
-                            <label for="{{ form.email.id_for_label }}">Correo Electrónico:</label>
-                            {{ form.email }}
-                        </div>
-                        <div class="form-group">
-                            <label for="{{ form.telefono.id_for_label }}">Teléfono:</label>
-                            {{ form.telefono }}
-                        </div>
-                        <div class="form-group">
-                            <label for="{{ form.domicilio.id_for_label }}">Domicilio:</label>
-                            {{ form.domicilio }}
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-block">Crear Usuario</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+<h1>Registrar Usuario</h1>
 
 
+<body id="fondo">
+    
+
+
+        <form method="post">{% csrf_token %}
+            {{form.as_p }}
+    
+            <button class="btn btn-info">Registrarse</button>
+
+        </form>
+
+</body>
 
 {% endblock contenido %}
