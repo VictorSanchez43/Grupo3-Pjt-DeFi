@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 
 {% block contenido %}
 
@@ -55,5 +57,7 @@
             </div>
         </div>
     </section>
+
+<script src="{% static 'jsfiles/bootstrap.bundle.min.js' %}"></script>
 
 {% endblock contenido %}
