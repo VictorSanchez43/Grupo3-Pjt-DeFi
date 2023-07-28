@@ -6,17 +6,19 @@
 <h1>Registrar Usuario</h1>
 
 
-<body id="fondo">
-    
+<body class="formulario" id="fondo">
+    <form method="post">{% csrf_token %}
 
+        <table class="formulario">
+            {{form.as_table }}
+        </table>
+        
 
-        <form method="post">{% csrf_token %}
-            {{form.as_p }}
-    
-            <button class="btn btn-info">Registrarse</button>
-
-        </form>
-
+        <button class="btn btn-info">Registrarse</button>
+    </form>
 </body>
 
+    
 {% endblock contenido %}
+    
+
