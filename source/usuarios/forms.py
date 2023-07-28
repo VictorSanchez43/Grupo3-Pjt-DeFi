@@ -16,7 +16,6 @@ class RegistrarUsuarioForm(UserCreationForm):
         labels = {
             'first_name': 'Ingresa tu nombre',
             'last_name': 'Ingresa tu Apellido',
-            'fecha_nacimiento': 'Selecciona tu fecha de nacimiento',
             'username': 'Ingresa un Nombre de Usuario',
             'emai': 'correo electronico',
             'telefono': 'telefono',
