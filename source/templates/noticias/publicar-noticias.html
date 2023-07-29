@@ -5,23 +5,10 @@
 
     
     <form method="post" enctype="multipart/form-data">
-
         {% csrf_token %}
-        <div class="mb-3">
-            <label for="id_titulo" class="form-label">Título</label>
-            {{ form.titulo }}
-        </div>
-        <div class="mb-3">
-            <label for="id_titulo" class="form-label">Texto</label>
-            {{ form.texto }}
-        </div>
-        <div class="mb-3">
-            {{ form.img }}
-        </div>
-        <div class="d-grid gap-2 col-6 mx-auto">
-            <button class="btn btn-publicar" type="submit"><i class="fa-solid fa-file-lines"></i> Nueva Noticia</button>
-            <a href="{% url 'noticias:noticias' %}" class="btn btn-primary">Volver</a>
-        </div>
+
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-info">Publicar Noticia</button>
         
     </form>
 {% endblock contenido %}

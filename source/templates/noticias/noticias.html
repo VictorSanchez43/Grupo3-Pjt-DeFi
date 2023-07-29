@@ -6,31 +6,30 @@
 <main>
     
     {% if noticias %}
-        
-        <div class="p-4 p-md-5 mb-4 mt-2 rounded text-bg-dark">
+        <div class="p-4 p-md-5 mb-4 text-bg-dark">      
             <div class="col-md-6 px-0">
-                <img src="{{noticias.last.img.url}}" alt="ultima noticia">
-
+                <img src="{{noticias.last.img.url}}" alt="ultima noticia" style="max-width: 400px; max-height: 300px;">
                 <h1 class="display-4 fst-italic" id="id-titulo">{{noticias.last.titulo}}</h1>
                 <p class="lead my-3">{{noticias.last.texto}}</p>
-                <p class="lead mb-0">
-                </p>
+                <p class="lead mb-0"></p>
             </div>
         </div>
+
     {% endif  %}
-    {% for post in noticias  %}  
             
             <div class="row g-5">
                 <div class="col-md-8">
                     <div class="row mb-2">
                         <div class="col-md-12">
-                            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                            {% for post in noticias  %} 
+                                
+                            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 mt-2 shadow-sm h-md-250 position-relative">
                                 <div class="col p-4 d-flex flex-column position-static">
                                     <strong class="d-inline-block mb-2 text-primary-emphasis">Categoria</strong>
                                     <h3 class="mb-0">{{ post.titulo }}</h3>
                                     <div class="mb-1 text-body-secondary">{{ post.fecha}}</div>
                                     <p class="card-text mb-auto">{{ post.texto}}</p>
-                                    <a href="{% url 'noticias:noticia-detalle' post.id %}" class="icon-link gap-1 icon-link-hover stretched-link">
+                                    <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
                                     Seguir Leyendo...
                                     </a>
                                 </div>
@@ -38,7 +37,7 @@
                                     
                                         <img src="#" alt="imagen del post" style="max-width: 400px; max-height: 300px;">
                                     
-                                        <img src="{% static 'img/defi1.jpg' %}" alt="imagen del post" style="max-width: 400px; max-height: 300px;">
+                                        <img src="{% static 'img/defi1.jpg' %}" alt="imagen del post" width="400" height="300">
                                 
                                 </div>
                             </div>
@@ -56,12 +55,10 @@
                                         </div>
                                     {% endif %}
                                 </div>
+                            {% endfor %}
                         </div>
                     </div>
-                </div>
-        
-        
-    {% endfor %}    
+                </div>  
 
                 <aside class="col-md-4">
                     <div class="position-sticky" style="top: 2rem;">
