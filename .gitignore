@@ -1,3 +1,5 @@
 *.pyc
 local.py
 .DS_Store
+manage.py
+base.py

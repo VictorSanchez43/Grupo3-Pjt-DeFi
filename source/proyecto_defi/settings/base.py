@@ -33,9 +33,10 @@ AUTH_USER_MODEL = 'usuarios.Usuario'
 SECRET_KEY = 'django-insecure-xv5wkld__wto9f5&%z0ncx8r+m)-pvlb5n@l0#!@91!lcl3c1!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['franezal.pythonanywhere.com']
+ALLOWED_HOSTS = ['franezal.pythonanywhere.com','127.0.0.1', 'localhost']
+
 
 
 # Application definition
