@@ -1,5 +1,6 @@
+from typing import Any, Dict
 from django.shortcuts import render
-from .models import Noticias
+from .models import Noticias, Categorias
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView
 from .forms import CrearNoticiasForm
 from django.urls import reverse
@@ -10,11 +11,30 @@ class VerNoticias(ListView):
     model = Noticias
     template_name = 'noticias/noticias.html'
     context_object_name = 'noticias'
+    paginate_by = 10
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['categorias'] = Categorias.objects.all
+        categoria_seleccionada = self.request.GET.get('categoria')
+        categoria_id = self.request.GET.get('categoria')
+        if categoria_id:
+            try:
+                categoria_seleccionada = Categorias.objects.get(pk=categoria_id)
+                context['categoria'] = categoria_seleccionada.nombre
+            except Categorias.DoesNotExist:
+                pass
+        return context
+        
     
     def get_queryset(self):
-        consulta_anterior = super().get_queryset()
-        consulta_ordenada = consulta_anterior.order_by('fecha')
-        return consulta_ordenada
+        queryset = super().get_queryset()
+        
+        #Filtrando por categoria:
+        categoria_seleccionada = self.request.GET.get('categoria')
+        if categoria_seleccionada:
+            queryset = queryset.filter(categoria = categoria_seleccionada)
+        return queryset
 
 
 # Vista que renderiza las noticias:
@@ -59,3 +79,5 @@ class NoticiaDetalle(DetailView):
     model = Noticias
     template_name = 'noticias/noticia-detalle.html'
     context_object_name = 'detalle'
+    
+    

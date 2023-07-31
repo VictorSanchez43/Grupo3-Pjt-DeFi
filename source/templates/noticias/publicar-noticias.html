@@ -8,7 +8,10 @@
         {% csrf_token %}
 
         {{ form.as_p }}
-        <button type="submit" class="btn btn-info">Publicar Noticia</button>
+        <button type="submit" class="btn btn-primary">Publicar Noticia</button>
+        <a href="{% url 'noticias:noticias' %}" class="btn btn-primary">Volver</a>
         
     </form>
+
+    
 {% endblock contenido %}

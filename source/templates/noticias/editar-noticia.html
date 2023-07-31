@@ -3,11 +3,11 @@
     <h2>Editar</h2>
 
     <form method="post">{% csrf_token %}
-
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-info">Guardar Cambios  <i class="fa-solid fa-circle-check"></i></button>
+        <table>
+        {{ form.as_table }}
+        </table>
+        <button type="submit" class="btn btn-primary">Guardar Cambios  <i class="fa-solid fa-circle-check"></i></button>
         <a href="{% url 'noticias:noticias' %}" class="btn btn-primary">Volver</a>
-
     </form>
         
 {% endblock contenido %}
