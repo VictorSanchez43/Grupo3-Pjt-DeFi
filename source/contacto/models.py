@@ -8,4 +8,5 @@ class Contacto(models.Model):
     apellido = models.CharField(max_length=50)
     email = models.EmailField(max_length=100)
     telefono = models.CharField(max_length=50)
+    asunto = models.CharField(max_length=100)
     texto = models.TextField()

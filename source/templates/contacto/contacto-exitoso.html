@@ -1,13 +1,15 @@
 {% extends 'base.html' %}
+{% load static %}
 
-
+<title>Contacto exitoso</title>
 {% block contenido %}
-<div class="card w-50">
+  <div class="card w-50" style="margin: 50px auto;">
     <div class="card-body">
       <h5 class="card-title">Mensaje guardado exitosamente!</h5>
       <p class="card-text">Gracias por ponerte en contacto con nosotros. Un administrador se comunicará a la brevedad.</p>
-      <a href="#" class="btn btn-primary">Button</a>
+      <a href="{% url 'index' %}" class="btn btn-primary">Ir a Inicio</a>
     </div>
   </div>
+
 {% endblock contenido %}
     
