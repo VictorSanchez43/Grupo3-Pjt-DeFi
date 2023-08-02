@@ -46,7 +46,7 @@ Luego tenes que crear un archivo de configuraciones en la carpeta Grupo3-Pjt-DeF
 from .base import *
 
 STATICFILES_DIRS = (
-    os.path.join(os.path.dirname(BASE_DIR), "static"),
+    os.path.join(os.path.dirname(BASE_DIR), "source", "static"),
 )
 
 DATABASES = {
