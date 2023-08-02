@@ -19,8 +19,54 @@
         
           <p>{{ detalle.texto }}</p>
         </article>
+      
+        <div class="comentario-container">
+          <h3>Comentarios</h3>
 
+          
+            <!-- <div class="card">
+              <div class="card-body">
+                {% for comentario in detalle.comentarios.all %}
+                <h6>{{comentario.autor.first_name}} {{comentario.autor.last_name}}</h6>
+                <p>{{comentario.texto}}</p>
+                
+                {% if user.is_superuser or user == comentario.autor or user == comentario.relacion_post.autor or user.es_admin %}
+                  <a href="{% url 'noticias:borrar-comentario' comentario.id %}" class="btn btn-danger" ><i class="fa-solid fa-trash"></i>  Borrar comentario</a>
+                {% endif %}
+                  
+                {% endfor %}
+              </div>
+            </div> -->
+            {% for comentario in detalle.comentarios.all %}
+              <div class="card">
+                <div class="card-header" class="bkg-secondary">
+                  Publicado por: {{ comentario.autor.first_name }} {{comentario.autor.last_name}}
+                </div>
+                <div class="card-body">
+                  <p class="card-text">{{ comentario.texto }}</p>
+                  
+                <div class="card-header">
+                  <p class="card-text">fecha: {{ comentario.fecha }}</p>
+                  {% if user.is_superuser or user == comentario.autor or user == comentario.relacion_post.autor or user.es_admin %}
+                    <div class="btn-group" role="group" aria-label="Default button group">
+                      <a href="{% url 'noticias:borrar-comentario' comentario.id %}" class="btn btn-danger"><i class="fa-solid fa-trash"></i>  Eliminar Comentario</a>
+                    </div>
+                  {% endif %}
+                </div>
+                </div>
+              </div> 
+            {% endfor %}
+          
+              
       </div>
+      
+      {% if user.is_authenticated %}
+        <form method="post">{% csrf_token %}
+          {{formulario_comentario}}
+          <button type="submit" class="btn btn-success">Comentar</button>
+        </form>
+      {% endif %}
+        
     </div>
 
     <aside class="col-md-4">

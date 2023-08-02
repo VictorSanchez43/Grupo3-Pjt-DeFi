@@ -32,6 +32,11 @@ class Noticias(models.Model):
     def __str__(self):
         return self.titulo
 
-    
-    
+class Comentario(models.Model):
+    texto = models.TextField()
+    fecha = models.DateTimeField(auto_now_add=True)
+    relacion_post = models.ForeignKey(Noticias, on_delete=models.CASCADE, related_name='comentarios')
+    autor = models.ForeignKey(Usuario, on_delete=models.CASCADE, related_name='comentario_usuario')
 
+    def __str__(self):
+        return self.relacion_post.titulo + '' + self.autor.first_name + '' + self.autor.last_name
