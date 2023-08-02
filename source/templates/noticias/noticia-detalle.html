@@ -23,20 +23,6 @@
         <div class="comentario-container">
           <h3>Comentarios</h3>
 
-          
-            <!-- <div class="card">
-              <div class="card-body">
-                {% for comentario in detalle.comentarios.all %}
-                <h6>{{comentario.autor.first_name}} {{comentario.autor.last_name}}</h6>
-                <p>{{comentario.texto}}</p>
-                
-                {% if user.is_superuser or user == comentario.autor or user == comentario.relacion_post.autor or user.es_admin %}
-                  <a href="{% url 'noticias:borrar-comentario' comentario.id %}" class="btn btn-danger" ><i class="fa-solid fa-trash"></i>  Borrar comentario</a>
-                {% endif %}
-                  
-                {% endfor %}
-              </div>
-            </div> -->
             {% for comentario in detalle.comentarios.all %}
               <div class="card">
                 <div class="card-header" class="bkg-secondary">
@@ -67,24 +53,26 @@
         </form>
       {% endif %}
         
+      </div>
+      
     </div>
-
     <aside class="col-md-4">
-        <div class="position-sticky" style="top: 2rem;">
-
-            <div class="p-4">
-              <h4 class="fst-italic">Nuestras Redes</h4>
-              <ol class="list-unstyled">
-                 <li><a href="https://www.instagram.com/"><i class="fa-brands fa-square-instagram"></i> Instagram</a></li>
-                 <li><a href="https://twitter.com/i/flow/login?redirect_after_login=%2F%3Flang%3Des"><i class="fa-brands fa-twitter"></i> Twitter</a></li>
-                 <li><a href="https://es-la.facebook.com/"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
-              </ol>
-            </div>
+      <div class="position-sticky" style="top: 2rem;">
+      
+          <div class="p-4">
+            <h4 class="fst-italic">Nuestras Redes</h4>
+            <ol class="list-unstyled">
+               <li><a href="https://www.instagram.com/"><i class="fa-brands fa-square-instagram"></i> Instagram</a></li>
+               <li><a href="https://twitter.com/i/flow/login?redirect_after_login=%2F%3Flang%3Des"><i class="fa-brands fa-twitter"></i> Twitter</a></li>
+               <li><a href="https://es-la.facebook.com/"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
+            </ol>
+          </div>
         
-        </div>
+      </div>
     </aside>
-  </div>
+
   <a href="{% url 'noticias:noticias' %}" class="btn btn-primary">Volver</a>
+  </div>
 </main>
 
 <footer class="py-5 text-center text-body-secondary bg-body-tertiary">
